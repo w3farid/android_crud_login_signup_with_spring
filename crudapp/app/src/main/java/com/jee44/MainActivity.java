@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.jee44.adapter.UserAdapter;
+import com.jee44.imageupload.ImageUploadActivity;
 import com.jee44.model.UserModel;
 import com.jee44.retrofit.RetrofitConfig;
 import com.jee44.service.UserService;
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void edit(View view){
         startActivity(new Intent(this, LoginActivity.class));
+    }
+    public void imageUpload(View view){
+        startActivity(new Intent(this, ImageUploadActivity.class));
     }
 
 }
