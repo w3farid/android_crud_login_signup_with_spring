@@ -34,6 +34,7 @@ public class ImageUploadActivity extends AppCompatActivity {
     Button button;
     Uri imageUri;
     ImageManager imageManager;
+    private static final int PICK_IMAGE = 100;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,15 @@ public class ImageUploadActivity extends AppCompatActivity {
         });
 
         imageManager.showImage("http://192.168.2.130:8080/downloadFile/logo.jpg", imageView);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE){
+            imageUri = data.getData();
+            imageView.setImageURI(imageUri);
+        }
     }
 
 
